@@ -1,0 +1,56 @@
+<nav class="d-flex justify-content-between" [ngClass]="{ noScroll: showMenu }">
+  <img
+    class="menuIcon"
+    src="../../assets/img/code.png"
+    alt="code"
+    [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+  <img
+    *ngIf="isMobile"
+    class="themeSwitch"
+    src="../../assets/icons/light.svg"
+    alt="menu"
+    (click)="toggleTheme()"
+    [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+  <div class="menu-icon" (click)="openMenu()">
+    <img
+      class="menuIcon"
+      src="../../assets/icons/menu.svg"
+      alt="menu"
+      [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+  </div>
+  <div *ngIf="!isMobile" class="d-flex">
+    <ul class="menu-items" [ngClass]="{ hidden: isMobile }">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/details">Details</a></li>
+      <li><a href="/search">Search</a></li>
+      <li><a href="/cards">Cards</a></li>
+    </ul>
+    <img
+      *ngIf="!isMobile"
+      class="themeSwitch"
+      src="../../assets/icons/light.svg"
+      alt="menu"
+      (click)="toggleTheme()"
+      [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+  </div>
+  <div
+    class="fullscreen-menu animate__animated animate__fadeIn"
+    id="fullscreenDiv"
+    *ngIf="showMenu"
+    (click)="openMenu()"
+    (touchmove)="disableScroll($event)"
+    [ngClass]="{ show: showMenu }">
+    <div class="closeIconContainer">
+      <img
+        src="../../assets/icons/close.svg"
+        alt="menu"
+        [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+    </div>
+    <ul class="fullscreen-menu-items">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/details">Details</a></li>
+      <li><a href="/search">Search</a></li>
+      <li><a href="/cards">Cards</a></li>
+    </ul>
+  </div>
+</nav>

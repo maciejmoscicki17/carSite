@@ -1,0 +1,133 @@
+<div class="container mx-auto mt-3">
+  <div class="row row-cols-auto d-flex w-100 mb-3">
+    <div
+      *ngFor="let button of buttons"
+      class="typeButton"
+      [ngClass]="{
+        typeButtonClicked: button.clicked,
+        typeButtonDark: button.clicked && isDarkTheme
+      }"
+      (click)="btnClick(button.number)">
+      <img
+        [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }"
+        [src]="button.imageSrc"
+        alt="" />
+      <label>{{ button.description }}</label>
+    </div>
+  </div>
+  <div class="row">
+    <!-- *ngIf="buttons[1].clicked" -->
+    <div class="col-md d-flex justify-content-center mb-3">
+      <select
+        class="form-select w-75"
+        id="makeSelect"
+        (change)="onMakeChange($event)">
+        <option value="-1">Make</option>
+
+        <option *ngFor="let car of cars; let i = index" [value]="i">
+          {{ car.make }}
+        </option>
+      </select>
+    </div>
+    <!-- *ngIf="buttons[1].clicked" -->
+    <div class="col-md d-flex justify-content-center mb-3">
+      <select class="form-select w-75" id="modelSelect" disabled>
+        <option value="-1">Model</option>
+        <ng-container *ngIf="selectedMake">
+          <option
+            *ngFor="let carType of selectedMake.models; let i = index"
+            [value]="i">
+            {{ carType }}
+          </option>
+        </ng-container>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md d-flex justify-content-evenly mb-3">
+      <input type="number" class="form-control mx-2" placeholder="Rok od" />
+      <input type="number" class="form-control mx-2" placeholder="Rok do" />
+    </div>
+    <div class="col-md d-flex justify-content-evenly mb-3">
+      <input type="number" class="form-control mx-2" placeholder="Cena od" />
+      <input type="number" class="form-control mx-2" placeholder="Cena do" />
+    </div>
+  </div>
+  <div class="row p-1">
+    <div class="col d-flex justify-content-center">
+      <a>Advanced search</a>
+    </div>
+    <div class="col d-flex justify-content-center">
+      <button
+        type="button"
+        class="searchButton btn btn-primary"
+        (click)="log()">
+        Search
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="mx-auto body flex-column">
+    <div class="row row-cols-auto d-flex w-100 m-0 mb-3">
+      <div
+        *ngFor="let button of buttons"
+        class="typeButton"
+        [ngClass]="{ typeButtonClicked: button.clicked }"
+        (click)="btnClick(button.number)">
+        <img [src]="button.imageSrc" alt="" />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div
+        *ngIf="buttons[1].clicked"
+        class="col-sm d-flex justify-content-center">
+        <select
+          class="form-select w-50"
+          id="makeSelect"
+          (change)="onMakeChange($event)">
+          <option value="-1">Make</option>
+  
+          <option *ngFor="let car of cars; let i = index" [value]="i">
+            {{ car.make }}
+          </option>
+        </select>
+      </div>
+      <div
+        *ngIf="buttons[1].clicked"
+        class="col-sm d-flex justify-content-center mt-3 mt-md-0">
+        <select class="form-select w-50" id="modelSelect" disabled>
+          <option value="-1">Model</option>
+          <ng-container *ngIf="selectedMake">
+            <option
+              *ngFor="let carType of selectedMake.models; let i = index"
+              [value]="i">
+              {{ carType }}
+            </option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-6">
+        <div class="row mb-3">
+          <div class="col-sm d-flex justify-content-center mb-3">
+            <input type="number" class="form-control w-50" placeholder="Rok od" />
+          </div>
+          <div class="col-sm d-flex justify-content-center mb-3">
+            <input type="number" class="form-control w-50" placeholder="Rok do" />
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row mb-3">
+          <div class="col-12 d-flex justify-content-center mb-3">
+            <input type="text" class="form-control w-75" placeholder="Cena od" />
+          </div>
+          <div class="col-12 d-flex justify-content-center mb-3">
+            <input type="text" class="form-control w-75" placeholder="Cena do" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->

@@ -1,0 +1,25 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+:root {
+  --accent-color: #ebebe3;
+  --background-color: #1e1e1e;
+  --header-color: #3b3b3b;
+}
+
+:root.dark-theme {
+  --accent-color: #1e1e1e;
+  --background-color: #ebebe3;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background-color) !important;
+  overflow-x: hidden;
+}
+
+/* .dark {
+  filter: invert(1);
+}
+
+.light {
+  filter: invert(0);
+} */

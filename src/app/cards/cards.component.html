@@ -1,0 +1,12 @@
+<!-- *ngIf="!isLoading" -->
+<div [ngClass]="isMobile ? 'container' : 'desktopContainer'" id="container">
+  <div
+    *ngFor="let item of items; let i = index"
+    class="item{{ i + 1 }}"
+    [ngClass]="isMobile ? 'item' : 'desktopItem'">
+    <div class="content">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+</div>
