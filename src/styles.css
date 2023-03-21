@@ -15,7 +15,9 @@ body {
   background-color: var(--background-color) !important;
   overflow-x: hidden;
 }
-
+.test {
+  opacity: 1;
+}
 /* .dark {
   filter: invert(1);
 }
