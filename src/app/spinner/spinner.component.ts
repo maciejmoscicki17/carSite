@@ -1,0 +1,11 @@
+import { Component, Input } from "@angular/core";
+
+@Component({
+  selector: "app-spinner",
+  templateUrl: "./spinner.component.html",
+  styleUrls: ["./spinner.component.scss"],
+})
+export class SpinnerComponent {
+  @Input() loading: boolean = false;
+  //TODO FULL BLURR, na homepage car.svg nie ma blurra
+}

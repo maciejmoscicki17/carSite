@@ -31,7 +31,11 @@
     </div>
     <!-- *ngIf="buttons[1].clicked" -->
     <div class="col-md d-flex justify-content-center mb-3">
-      <select class="form-select w-75" id="modelSelect" disabled>
+      <select
+        class="form-select w-75"
+        id="modelSelect"
+        disabled
+        (change)="onModelChange($event)">
         <option value="-1">Model</option>
         <ng-container *ngIf="selectedMake">
           <option
@@ -58,7 +62,12 @@
       <a href="">Advanced search</a>
     </div>
     <div class="col d-flex justify-content-center">
-      <button type="button" class="searchButton btn btn-primary">Search</button>
+      <button
+        type="button"
+        class="searchButton btn btn-primary"
+        (click)="showResults()">
+        Search
+      </button>
     </div>
   </div>
 </div>

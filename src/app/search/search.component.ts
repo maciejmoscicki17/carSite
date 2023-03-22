@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { ThemeService } from "../theme.service";
 
@@ -14,11 +15,12 @@ interface Make {
 })
 export class SearchComponent implements OnInit, OnDestroy {
   selectedMake?: Make;
+  selectedModel?: string;
 
   isDarkTheme: boolean = this.themeService.getActiveTheme() === "dark";
   private themeChangeSubscription: Subscription;
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private router: Router) {
     this.themeChangeSubscription = this.themeService.themeChange$.subscribe(
       (isDarkTheme) => {
         this.isDarkTheme = isDarkTheme;
@@ -51,6 +53,25 @@ export class SearchComponent implements OnInit, OnDestroy {
     ) as HTMLSelectElement;
 
     modelSelect.disabled = selectedIndex === "-1";
+  }
+
+  onModelChange(event: Event) {
+    const selectedIndex = (event.target as HTMLSelectElement).value;
+    if (selectedIndex !== "-1" && this.selectedMake !== undefined) {
+      this.selectedModel = this.selectedMake.models[+selectedIndex];
+    } else {
+      this.selectedMake = undefined;
+    }
+  }
+
+  showResults(): void {
+    if (this.selectedMake !== undefined && this.selectedModel !== undefined) {
+      this.router.navigate([
+        "results",
+        this.selectedMake.make,
+        this.selectedModel,
+      ]);
+    }
   }
 
   buttons = [

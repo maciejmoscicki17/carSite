@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Subscription } from "rxjs";
 import { ThemeService } from "../theme.service";
 
@@ -7,10 +7,11 @@ import { ThemeService } from "../theme.service";
   templateUrl: "./homepage.component.html",
   styleUrls: ["./homepage.component.css"],
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
   title = "carApp";
   isDarkTheme: boolean = this.themeService.isDarkMode();
   private themeChangeSubscription: Subscription;
+  isLoading: boolean = true;
 
   constructor(private themeService: ThemeService) {
     this.themeChangeSubscription = themeService.themeChange$.subscribe(
@@ -18,5 +19,11 @@ export class HomepageComponent {
         this.isDarkTheme = isDarkTheme;
       }
     );
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
   }
 }
