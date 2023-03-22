@@ -3,20 +3,20 @@
     class="menuIcon"
     src="../../assets/img/code.png"
     alt="code"
-    [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+    appColorToggle />
   <img
     *ngIf="isMobile"
     class="themeSwitch"
     src="../../assets/icons/light.svg"
     alt="menu"
     (click)="toggleTheme()"
-    [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
-  <div class="menu-icon" (click)="openMenu()">
+    appColorToggle />
+  <div class="menu-icon" (click)="openMenu($event)">
     <img
       class="menuIcon"
       src="../../assets/icons/menu.svg"
       alt="menu"
-      [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+      appColorToggle />
   </div>
   <div *ngIf="!isMobile" class="d-flex">
     <ul class="menu-items" [ngClass]="{ hidden: isMobile }">
@@ -31,26 +31,23 @@
       src="../../assets/icons/light.svg"
       alt="menu"
       (click)="toggleTheme()"
-      [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+      appColorToggle />
   </div>
   <div
     class="fullscreen-menu animate__animated animate__fadeIn"
     id="fullscreenDiv"
     *ngIf="showMenu"
-    (click)="openMenu()"
+    (click)="openMenu($event)"
     (touchmove)="disableScroll($event)"
     [ngClass]="{ show: showMenu }">
     <div class="closeIconContainer">
-      <img
-        src="../../assets/icons/close.svg"
-        alt="menu"
-        [ngClass]="{ dark: isDarkTheme, light: !isDarkTheme }" />
+      <img src="../../assets/icons/close.svg" alt="menu" appColorToggle />
     </div>
     <ul class="fullscreen-menu-items">
-      <li><a href="/home">Home</a></li>
-      <li><a href="/details">Details</a></li>
-      <li><a href="/search">Search</a></li>
-      <li><a href="/cards">Cards</a></li>
+      <li><a (click)="goToRoute('/home')">Home</a></li>
+      <li><a (click)="goToRoute('/details')">Details</a></li>
+      <li><a (click)="goToRoute('/search')">Search</a></li>
+      <li><a (click)="goToRoute('/cards')">Cards</a></li>
     </ul>
   </div>
 </nav>

@@ -22,18 +22,11 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.themeChangeSubscription = this.themeService.themeChange$.subscribe(
       (isDarkTheme) => {
         this.isDarkTheme = isDarkTheme;
-        console.log("search ctr: " + this.isDarkTheme);
       }
     );
   }
 
-  log() {
-    console.log("search log: " + this.isDarkTheme);
-  }
-
-  ngOnInit(): void {
-    this.log();
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.themeChangeSubscription.unsubscribe();

@@ -1,4 +1,5 @@
 import { Component, HostListener, OnDestroy } from "@angular/core";
+import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { ThemeService } from "../theme.service";
 
@@ -15,10 +16,9 @@ export class HeaderComponent implements OnDestroy {
   isDarkTheme: boolean = this.themeService.isDarkMode();
   private themeChangeSubscription: Subscription;
 
-  constructor(private themeService: ThemeService) {
+  constructor(private themeService: ThemeService, private router: Router) {
     this.themeChangeSubscription = this.themeService.themeChange$.subscribe(
       (isDarkTheme) => {
-        console.log(isDarkTheme);
         this.isDarkTheme = isDarkTheme;
       }
     );
@@ -44,8 +44,9 @@ export class HeaderComponent implements OnDestroy {
     this.isMobile = window.innerWidth < 768;
   }
 
-  openMenu() {
+  openMenu(event: Event) {
     if (this.showMenuFlag) {
+      event.stopPropagation();
       return;
     } else {
       this.showMenuFlag = true;
@@ -59,16 +60,23 @@ export class HeaderComponent implements OnDestroy {
     } else {
       this.showMenu = true;
     }
-    //this.showMenu = !this.showMenu;
   }
 
   closeMenu() {
+    this.showMenuFlag = true;
+    setTimeout(() => {
+      this.showMenuFlag = false;
+    }, 1000);
     this.showMenu = false;
+  }
+
+  goToRoute(route: string) {
+    if (this.showMenuFlag) return;
+    this.router.navigateByUrl(route);
   }
 
   disableScroll(event: Event) {
     event.preventDefault();
-    console.log("caught");
   }
 
   animateCSS(element: string, animation: string, prefix = "animate__") {

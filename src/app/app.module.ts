@@ -8,6 +8,7 @@ import { SearchComponent } from "./search/search.component";
 import { CardsComponent } from "./cards/cards.component";
 import { HomepageComponent } from './homepage/homepage.component';
 import { DetailsComponent } from './details/details.component';
+import { ColorToggleDirective } from './color-toggle.directive';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DetailsComponent } from './details/details.component';
     CardsComponent,
     HomepageComponent,
     DetailsComponent,
+    ColorToggleDirective,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

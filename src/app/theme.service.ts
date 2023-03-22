@@ -65,7 +65,7 @@ export class ThemeService {
     return match ? match[1] : null;
   }
 
-  isDarkModeEnabled() {
+  private isDarkModeEnabled() {
     return (
       window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches

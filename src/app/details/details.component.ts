@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
+import { ThemeService } from "../theme.service";
 
 interface Car {
   make: string;
@@ -15,10 +17,18 @@ export class DetailsComponent implements OnInit {
   car: Car;
   currentImageSrc: string;
   isMobile: boolean = false;
+  showImageFullscreen: boolean = false;
+  themeChangeSubscription: Subscription;
+  isDarkTheme: boolean = this.themeService.isDarkMode();
 
-  constructor() {
+  constructor(private themeService: ThemeService) {
     this.car = { make: "Toyota", model: "Supra", price: 200000 };
     this.currentImageSrc = this.imageSrcs[0];
+    this.themeChangeSubscription = themeService.themeChange$.subscribe(
+      (isDarkTheme) => {
+        this.isDarkTheme = isDarkTheme;
+      }
+    );
   }
 
   ngOnInit(): void {
@@ -35,7 +45,6 @@ export class DetailsComponent implements OnInit {
       element.classList.remove("animate__fadeOut");
       this.currentImageSrc = src;
       element.classList.add("animate__fadeIn");
-      console.log("end");
     };
 
     element.addEventListener("animationend", onAnimationEnd);
@@ -48,6 +57,19 @@ export class DetailsComponent implements OnInit {
 
   checkScreenSize() {
     this.isMobile = window.innerWidth < 768;
+  }
+
+  showFullScreen() {
+    this.showImageFullscreen = true;
+    if (this.showImageFullscreen) {
+      document.documentElement.style.overflow = "hidden";
+    }
+  }
+
+  closeFullscreen() {
+    this.showImageFullscreen = false;
+
+    document.documentElement.style.overflow = "auto";
   }
 
   imageSrcs: string[] = [

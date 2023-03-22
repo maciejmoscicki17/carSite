@@ -1,16 +1,12 @@
 <div class="content">
   <div class="titleContainer">
-    <ng-container *ngIf="isDarkTheme">
+    <ng-container>
       <img
         class="titleCar"
         src="../assets/img/car-white.svg"
-        alt="Image"
-        style="display: block !important" />
-    </ng-container>
-    <ng-container *ngIf="!isDarkTheme">
-      <img
-        class="titleCar"
-        src="../assets/img/car.svg"
+        [src]="
+          isDarkTheme ? '../assets/img/car-white.svg' : '../assets/img/car.svg'
+        "
         alt="Image"
         style="display: block !important" />
     </ng-container>

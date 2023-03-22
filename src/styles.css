@@ -18,6 +18,10 @@ body {
 .test {
   opacity: 1;
 }
+
+.invert {
+  filter: invert(1);
+}
 /* .dark {
   filter: invert(1);
 }

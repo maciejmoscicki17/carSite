@@ -7,13 +7,11 @@
   color: #fff; /* set the text color to white */
 }
 .container {
-  /* cursor: wait; */
   display: flex;
   overflow-x: scroll;
   padding: 24px;
   box-sizing: border-box;
-  /* outline: 10px solid white; */
-  width: 100%;
+  width: 100vw;
   scroll-snap-type: x mandatory;
   scroll-padding: auto;
   border-radius: 8px;

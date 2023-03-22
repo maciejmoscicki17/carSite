@@ -118,11 +118,3 @@ img {
   height: 50px;
   cursor: pointer;
 }
-
-.dark {
-  filter: invert(1);
-}
-
-.light {
-  filter: invert(0);
-}
