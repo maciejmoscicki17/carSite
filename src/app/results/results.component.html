@@ -1,3 +1,10 @@
-<p>results works!</p>
-<img [src]="imageUrl" alt="menu" />
 <app-spinner [loading]="isLoading"></app-spinner>
+<div class="mainContent">
+  <h2>Car Models</h2>
+  <div class="singleCard" *ngFor="let car of carModels">
+    <span class="brandTitle">{{ car.brand }}</span>
+    <span *ngFor="let model of car.models" class="modelTitle">{{ model }}</span>
+  </div>
+</div>
+
+<img src="../../assets/cupra-formentor-PhotoRoom.png-PhotoRoom.png" alt="x" />

@@ -1,3 +1,28 @@
 img {
   max-width: 100svw;
 }
+.mainContent {
+  width: 50%;
+  margin: auto;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.singleCard {
+  height: auto;
+  width: 90%;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.brandTitle {
+  background-color: red;
+}
+
+.modelTitle {
+}

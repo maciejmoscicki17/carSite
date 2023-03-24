@@ -4,24 +4,36 @@
     "models": ["Leon ST"]
   },
   {
+    "brand": "Cupra",
+    "models": ["Formentor", "Born"]
+  },
+  {
     "brand": "Renault",
     "models": ["Mégane RS"]
   },
   {
     "brand": "Alfa Romeo",
-    "models": ["4C", "8C", "Giulia"]
+    "models": ["4C", "8C", "Giulia", "Stelvio"]
   },
   {
-    "brand": "Škoda",
-    "models": ["Octavia RS", "Superb"]
+    "brand": "McLaren",
+    "models": ["GT", "720s"]
   },
   {
     "brand": "Chevrolet",
-    "models": ["Camaro", "Corvette"]
+    "models": ["Camaro", "Corvette", "Suburban"]
+  },
+  {
+    "brand": "GMC",
+    "models": ["Hummer EV", "Yukon Denali"]
+  },
+  {
+    "brand": "Hyperion",
+    "models": ["XP-1"]
   },
   {
     "brand": "Porsche",
-    "models": ["911", "918", "Cayenne", "Panamera", "Taycan"]
+    "models": ["718", "911", "918", "Macan", "Cayenne", "Panamera", "Taycan"]
   },
   {
     "brand": "Honda",
@@ -49,31 +61,63 @@
   },
   {
     "brand": "BMW",
-    "models": ["i8", "M3", "M4", "M5", "M6", "Z3", "Z4"]
+    "models": ["i8", "M3", "M4", "M5", "M6", "M8", "Z3", "Z4", "XM"]
   },
   {
     "brand": "Volkswagen",
-    "models": ["T4", "California", "Golf", "Phaeton", "Scirocco"]
+    "models": ["Golf GTI", "Phaeton", "Touareg"]
   },
   {
     "brand": "Mercedes-Benz",
-    "models": ["190 E", "AMG GT", "S", "SLR"]
+    "models": ["190 E", "AMG GT", "S", "SLR", "Maybach Klasa V", "Maybach GLS"]
   },
   {
     "brand": "Audi",
-    "models": ["R8", "RSQ8", "RS4", "RS5", "RS6", "RS7"]
+    "models": ["R8", "RSQ8", "RS6", "RS7"]
   },
   {
     "brand": "Kia",
-    "models": ["Stinger"]
+    "models": ["Stinger GT"]
+  },
+  {
+    "brand": "Lotus",
+    "models": ["Emira"]
+  },
+  {
+    "brand": "Bugatti",
+    "models": ["Chiron Pur Sport"]
+  },
+  {
+    "brand": "Koenigsegg",
+    "models": ["Regera", "Gemera"]
+  },
+  {
+    "brand": "Lamborghini",
+    "models": ["Aventador", "Huracan"]
+  },
+  {
+    "brand": "Bentley",
+    "models": ["Continental GT"]
+  },
+  {
+    "brand": "Rolls-Royce",
+    "models": ["Wraith"]
+  },
+  {
+    "brand": "Rimac",
+    "models": ["Nevera"]
   },
   {
     "brand": "Dodge",
-    "models": ["Challenger", "Charger", "RAM", "Viper"]
+    "models": ["Challenger", "Charger", "Viper"]
+  },
+  {
+    "brand": "Ram Trucks",
+    "models": ["1500 RTX"]
   },
   {
     "brand": "Ford",
-    "models": ["Focus RS", "GT40", "Mustang"]
+    "models": ["Focus RS", "GT", "Mustang", "Raptor"]
   },
   {
     "brand": "Hyundai",
@@ -86,5 +130,9 @@
   {
     "brand": "Nissan",
     "models": ["200 SX", "350 Z", "370 Z", "Skyline", "GT-R"]
+  },
+  {
+    "brand": "Ferrari",
+    "models": ["F40", "SF90 Stradale", "Purosangue"]
   }
 ]
