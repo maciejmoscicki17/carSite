@@ -1,0 +1,90 @@
+[
+  {
+    "brand": "Seat",
+    "models": ["Leon ST"]
+  },
+  {
+    "brand": "Renault",
+    "models": ["Mégane RS"]
+  },
+  {
+    "brand": "Alfa Romeo",
+    "models": ["4C", "8C", "Giulia"]
+  },
+  {
+    "brand": "Škoda",
+    "models": ["Octavia RS", "Superb"]
+  },
+  {
+    "brand": "Chevrolet",
+    "models": ["Camaro", "Corvette"]
+  },
+  {
+    "brand": "Porsche",
+    "models": ["911", "918", "Cayenne", "Panamera", "Taycan"]
+  },
+  {
+    "brand": "Honda",
+    "models": ["Civic", "Integra", "Prelude", "NSX"]
+  },
+  {
+    "brand": "Subaru",
+    "models": ["BRZ", "Impreza", "WRX"]
+  },
+  {
+    "brand": "Mazda",
+    "models": ["MX-5", "RX-7", "RX-8"]
+  },
+  {
+    "brand": "Mitsubishi",
+    "models": ["Eclipse", "Lancer"]
+  },
+  {
+    "brand": "Lexus",
+    "models": ["LFA", "LC", "LS", "RC"]
+  },
+  {
+    "brand": "Toyota",
+    "models": ["Celica", "Corolla", "GT86", "MR2", "Supra", "GR Yaris"]
+  },
+  {
+    "brand": "BMW",
+    "models": ["i8", "M3", "M4", "M5", "M6", "Z3", "Z4"]
+  },
+  {
+    "brand": "Volkswagen",
+    "models": ["T4", "California", "Golf", "Phaeton", "Scirocco"]
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "models": ["190 E", "AMG GT", "S", "SLR"]
+  },
+  {
+    "brand": "Audi",
+    "models": ["R8", "RSQ8", "RS4", "RS5", "RS6", "RS7"]
+  },
+  {
+    "brand": "Kia",
+    "models": ["Stinger"]
+  },
+  {
+    "brand": "Dodge",
+    "models": ["Challenger", "Charger", "RAM", "Viper"]
+  },
+  {
+    "brand": "Ford",
+    "models": ["Focus RS", "GT40", "Mustang"]
+  },
+  {
+    "brand": "Hyundai",
+    "models": ["i30 N"]
+  },
+  {
+    "brand": "Jaguar",
+    "models": ["F-Type"]
+  },
+  {
+    "brand": "Nissan",
+    "models": ["200 SX", "350 Z", "370 Z", "Skyline", "GT-R"]
+  }
+]
